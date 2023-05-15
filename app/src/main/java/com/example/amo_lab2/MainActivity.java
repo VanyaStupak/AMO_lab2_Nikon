@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         output.setMovementMethod(new ScrollingMovementMethod());
 
         getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#9C6DD6")));
+                new ColorDrawable(Color.parseColor("#3FAC5A")));
         output.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     array = new long[Integer.parseInt(String.valueOf(n.getText()))];
                     long toplimit = Integer.parseInt(String.valueOf(top.getText()));
                     long bottomLimit = Integer.parseInt(String.valueOf(low.getText()));
-
                     for (int i = 0; i < array.length; i++) {
-                        array[i] = (long) (Math.random() * (toplimit - bottomLimit + 1) + (bottomLimit));
+                        array[i] = (long) (Math.random() * (toplimit - bottomLimit + 1) +
+                                (bottomLimit));
                     }
                     if (bottomLimit > toplimit) {
                         output.setText("Верхня границя має бути більшою за нижню!");
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         output.setText(Arrays.toString(array));
                     }
                 } catch (NumberFormatException e) {
-                    output.setText("Введіть коректні  числа!");
+                    output.setText("Введіть коректні числа!");
                 }
                 sort.setText("cортувати масив");
             }
@@ -78,26 +78,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     long m = System.currentTimeMillis();
-                    int h = 1;
-                    while (h <= array.length / 3) {
-                        h = h * 3 + 1;
-                    }
-
-                    while (h > 0) {
-                        for (int outer = h; outer < array.length; outer++) {
-                            long tmp = array[outer];
-                            int inner = outer;
-
-                            while (inner > h - 1 && array[inner - h] > tmp) {
-                                array[inner] = array[inner - h];
-                                inner -= h;
+                    long n = array.length;
+                    long k = 1;
+                    boolean swapped = false;
+                    do {
+                        swapped = false;
+                        for (int i = 0; i < n - k; i++) {
+                            if (array[i] > array[i+1]) {
+                                long temp = array[i];
+                                array[i] = array[i+1];
+                                array[i+1] = temp;
+                                swapped = true;
                             }
-                            array[inner] = tmp;
                         }
-                        h = (h - 1) / 3;
-                    }
-
-                    sort.setText("Час виконання сортування = " + String.valueOf((double) ((System.currentTimeMillis() - m) / 1000.0) + "s"));
+                        k++;
+                    } while (swapped);
+                    sort.setText("Час виконання сортування = " + String.valueOf((double)
+                            ((System.currentTimeMillis() - m) / 1000.0) + "s"));
                     output.setText(Arrays.toString(array));
                 }catch (NullPointerException e) {
                     output.setText("Cпочатку згенеруйте масив!");
@@ -106,16 +103,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        arr1 = new long[1];
+
+        arr1 = new long[10];
         arr2 = new long[100];
-        arr3 = new long[1000];
-        arr4 = new long[10000];
-        arr5 = new long[50000];
-        arr6 = new long[100000];
-        arr7 = new long[500000];
-        arr8 = new long[1000000];
-        arr9 = new long[5000000];
-        arr10 = new long[10000000];
+        arr3 = new long[500];
+        arr4 = new long[800];
+        arr5 = new long[1000];
+        arr6 = new long[3000];
+        arr7 = new long[5000];
+        arr8 = new long[10000];
+        arr9 = new long[30000];
+        arr10 = new long[50000];
         sort2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -149,25 +147,21 @@ public class MainActivity extends AppCompatActivity {
     }
     public void sort10mas(long[] array1, int arraycount){
         long m = System.currentTimeMillis();
-        int h = 1;
-
-        while (h <= array1.length / 3) {
-            h = h * 3 + 1;
-        }
-
-        while (h > 0) {
-            for (int outer = h; outer < array1.length; outer++) {
-                long tmp = array1[outer];
-                int inner = outer;
-
-                while (inner > h - 1 && array1[inner - h] > tmp) {
-                    array1[inner] = array1[inner - h];
-                    inner -= h;
+        long n = array1.length;
+        long k = 1;
+        boolean swapped = false;
+        do {
+            swapped = false;
+            for (int i = 0; i < n - k; i++) {
+                if (array1[i] > array1[i+1]) {
+                    long temp = array1[i];
+                    array1[i] = array1[i+1];
+                    array1[i+1] = temp;
+                    swapped = true;
                 }
-                array1[inner] = tmp;
             }
-            h = (h - 1) / 3;
-        }
+            k++;
+        } while (swapped);
         time[arraycount] = (System.currentTimeMillis() - m) / 1000.0;
     }
     public void fullarr(long[] arr, long length){

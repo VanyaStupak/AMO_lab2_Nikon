@@ -13,23 +13,22 @@
 
         <Button
             android:id="@+id/sortButton3"
-            android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:layout_marginTop="9dp"
+            android:layout_width="205dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/purple_200"
             android:onClick="startNewActivity"
             android:text="вивести графік"
-            android:backgroundTint="@color/purple_200"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/sortButton2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sortButton2"
+            app:layout_constraintTop_toTopOf="@+id/sortButton2"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/sortButton2"
-            android:layout_width="match_parent"
-            android:layout_height="39dp"
+            android:layout_width="205dp"
+            android:layout_height="70dp"
             android:backgroundTint="@color/purple_200"
             android:text="сортувати 10 масивів з файлу"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Алгоритм сортування Шелла"
+            android:text="Прискорене бульбашкове сортування з початку до кінця"
             android:textAllCaps="false"
             android:textColor="#000000"
             android:textSize="17sp"
@@ -75,7 +74,6 @@
             android:id="@+id/enterN"
             android:layout_width="135dp"
             android:layout_height="46dp"
-            android:background="@drawable/my_border"
             android:ems="10"
             android:gravity="center"
             android:inputType="text"
@@ -98,16 +96,15 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.016"
-            app:layout_constraintStart_toEndOf="@+id/textView14"
-            app:layout_constraintTop_toBottomOf="@+id/enterN"
-            app:layout_constraintVertical_bias="0.103" />
+            app:layout_constraintHorizontal_bias="0.271"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            app:layout_constraintVertical_bias="0.036" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="123dp"
             android:layout_height="30dp"
-            android:layout_marginStart="20dp"
             android:background="#FFFFFF"
             android:gravity="center"
             android:text="верхня"
@@ -115,30 +112,27 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.993"
+            app:layout_constraintHorizontal_bias="0.261"
             app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enterN"
-            app:layout_constraintVertical_bias="0.103" />
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            app:layout_constraintVertical_bias="0.036" />
 
         <EditText
             android:id="@+id/enterTop"
             android:layout_width="124dp"
             android:layout_height="45dp"
-            android:layout_marginStart="6dp"
             android:layout_marginTop="1dp"
-            android:background="@drawable/my_border"
             android:ems="10"
             android:gravity="center"
             android:inputType="text"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/enterLow"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView6"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             app:layout_constraintVertical_bias="0.002" />
+
 
         <TextView
             android:id="@+id/textView14"
@@ -150,33 +144,31 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.021"
+            app:layout_constraintHorizontal_bias="0.525"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.093" />
-
+            app:layout_constraintVertical_bias="0.021" />
 
         <EditText
             android:id="@+id/enterLow"
             android:layout_width="124dp"
             android:layout_height="45dp"
             android:layout_marginTop="2dp"
-            android:background="@drawable/my_border"
             android:ems="10"
             android:gravity="center"
             android:inputType="text"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/generate"
-            android:layout_width="match_parent"
-            android:layout_height="39dp"
+            android:layout_width="205dp"
+            android:layout_height="70dp"
             android:backgroundTint="@color/purple_200"
             android:text="згенерувати масив"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -189,16 +181,16 @@
 
         <Button
             android:id="@+id/sortButton"
-            android:layout_width="match_parent"
-            android:layout_height="39dp"
+            android:layout_width="203dp"
+            android:layout_height="70dp"
             android:backgroundTint="@color/purple_200"
             android:text="відсортувати масив"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/generate"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/enterTop"
+            app:layout_constraintVertical_bias="0.046" />
 
         <TextView
             android:id="@+id/textView9"
