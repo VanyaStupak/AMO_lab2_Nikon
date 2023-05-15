@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView sorted, output;
+    private TextView sorted, output, resault;
     private EditText n, low, top;
     private long[] array,arr1,arr2,arr3,arr4,arr5,arr6,arr7,arr8,arr9,arr10;
     public static double[] time = new double[10];
@@ -38,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
         Button sort2 = findViewById(R.id.sortButton2);
         Button graph = findViewById(R.id.sortButton3);
         output.setMovementMethod(new ScrollingMovementMethod());
+        resault = findViewById(R.id.textView5);
 
         getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#3FAC5A")));
+                new ColorDrawable(Color.parseColor("#EC920D")));
         output.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         k++;
                     } while (swapped);
-                    sort.setText("Час виконання сортування = " + String.valueOf((double)
+                    resault.setText("Час виконання сортування = " + String.valueOf((double)
                             ((System.currentTimeMillis() - m) / 1000.0) + "s"));
                     output.setText(Arrays.toString(array));
                 }catch (NullPointerException e) {
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 sort10mas(arr8,7);
                 sort10mas(arr9,8);
                 sort10mas(arr10,9);
-                sort2.setText("Масиви відсортовано за " + String.valueOf((double) ((System.currentTimeMillis() - m1) / 1000.0)) + "s");
+                resault.setText("Масиви відсортовано за " + String.valueOf((double) ((System.currentTimeMillis() - m1) / 1000.0)) + "s");
                 output.setText(Arrays.toString(time));
             }
         });
